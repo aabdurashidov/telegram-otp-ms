@@ -14,7 +14,6 @@ import java.util.UUID;
 public class TemporaryCodeService {
     private final ReactiveRedisTemplate<String, UUID> redisTemplate;
 
-
     public Mono<UUID> generate(String phoneNumber) {
         UUID tempCode = UUID.randomUUID();
         return redisTemplate.opsForValue()
