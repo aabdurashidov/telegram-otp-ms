@@ -14,4 +14,5 @@ public class TelegramProperties {
     private String exposedUrl;
     private Integer maxConnections;
     private List<String> allowedUpdates;
+    private String telegramBotUsername;
 }

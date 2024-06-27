@@ -1,4 +1,4 @@
-package uz.anorbank.telegram.otp;
+package uz.anorbank.telegram.otp.configuration;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 import reactor.core.scheduler.Schedulers;
 import uz.anorbank.telegram.otp.client.TelegramClient;
 import uz.anorbank.telegram.otp.client.request.SetWebhook;
-import uz.anorbank.telegram.otp.configuration.TelegramProperties;
 
 @Slf4j
 @Component

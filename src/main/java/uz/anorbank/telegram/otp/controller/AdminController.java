@@ -8,14 +8,14 @@ import reactor.core.publisher.Mono;
 import uz.anorbank.telegram.otp.client.request.SetWebhook;
 import uz.anorbank.telegram.otp.client.response.BaseResponse;
 import uz.anorbank.telegram.otp.client.response.GetWebhookInfoResponse;
-import uz.anorbank.telegram.otp.service.TelegramAdminService;
+import uz.anorbank.telegram.otp.service.AdminService;
 
 @Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/telegram/admin")
-public class TelegramAdminController {
-    private final TelegramAdminService service;
+public class AdminController {
+    private final AdminService service;
 
     @PostMapping("/set-webhook")
     public Mono<BaseResponse<Boolean>> setWebhook(@Valid @RequestBody SetWebhook setWebhook) {

@@ -10,7 +10,7 @@ import uz.anorbank.telegram.otp.client.response.GetWebhookInfoResponse;
 
 @Service
 @RequiredArgsConstructor
-public class TelegramAdminService {
+public class AdminService {
     private final TelegramClient telegramClient;
 
     public Mono<BaseResponse<Boolean>> setWebhook(SetWebhook setWebhook) {

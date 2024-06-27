@@ -10,3 +10,4 @@ application:
       - 'message'
     max-connections: 40
     enable-set-webhook-on-startup: true
+    telegram-bot-username: 'ob_otp_test_bot'

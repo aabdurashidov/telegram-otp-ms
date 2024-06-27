@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/telegram/webhook")
-public class TelegramWebhookController {
+public class WebhookController {
     @PostMapping
     public void handleTelegramUpdates(@RequestBody Object object) {
         System.out.println(object);
