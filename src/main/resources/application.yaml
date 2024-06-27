@@ -5,3 +5,8 @@ application:
   telegram:
     token: '7451571902:AAEn-9FxhZjw6ydt5mQS7QIjRmQlYGx4Vcg'
     url: 'https://api.telegram.org'
+    exposed-url: 'https://anorbank.uz'
+    allowed-updates:
+      - 'message'
+    max-connections: 40
+    enable-set-webhook-on-startup: true

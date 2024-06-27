@@ -8,7 +8,6 @@ import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 import uz.anorbank.telegram.otp.client.request.SetWebhook;
 import uz.anorbank.telegram.otp.client.response.BaseResponse;
-import uz.anorbank.telegram.otp.client.response.DeleteWebhookResponse;
 import uz.anorbank.telegram.otp.client.response.GetWebhookInfoResponse;
 
 @Slf4j

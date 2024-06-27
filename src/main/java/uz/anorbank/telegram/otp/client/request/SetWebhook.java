@@ -17,5 +17,4 @@ public class SetWebhook {
     private String url;
     private Integer max_connections;
     private List<String> allowed_updates;
-    private Boolean drop_pending_updates;
 }
