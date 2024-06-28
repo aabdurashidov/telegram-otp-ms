@@ -1,13 +1,17 @@
 spring:
   application:
     name: telegram-otp-ms
+  r2dbc:
+    url: r2dbc:postgresql://127.0.0.1:5432/telegram_otp_db
+    username: postgres
+    password: postgres
 application:
   telegram:
     token: '7451571902:AAEn-9FxhZjw6ydt5mQS7QIjRmQlYGx4Vcg'
     url: 'https://api.telegram.org'
-    exposed-url: 'https://anorbank.uz'
+    exposed-url: 'https://rnxvh-188-113-232-143.a.free.pinggy.link/api/telegram/webhook'
     allowed-updates:
       - 'message'
     max-connections: 40
     enable-set-webhook-on-startup: true
-    telegram-bot-username: 'ob_otp_test_bot'
+    telegram-bot-username: 'ab_otp_test_bot'

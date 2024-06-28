@@ -6,9 +6,11 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+import uz.anorbank.telegram.otp.client.request.SendMessage;
 import uz.anorbank.telegram.otp.client.request.SetWebhook;
 import uz.anorbank.telegram.otp.client.response.BaseResponse;
 import uz.anorbank.telegram.otp.client.response.GetWebhookInfoResponse;
+import uz.anorbank.telegram.otp.client.response.TelegramMessage;
 
 @Slf4j
 @Component
@@ -30,6 +32,13 @@ public class TelegramClient {
 
     public Mono<BaseResponse<GetWebhookInfoResponse>> getWebhookInfo() {
         String path = "/getWebhookInfo";
+        return sendRequest(path, new ParameterizedTypeReference<>() {
+        });
+    }
+
+    public Mono<BaseResponse<Void>> sendMessage(SendMessage sendMessage) {
+        String path = "/sendMessage";
+
         return sendRequest(path, new ParameterizedTypeReference<>() {
         });
     }

@@ -16,7 +16,7 @@ import java.util.UUID;
 public class RegistrationService {
     private final TemporaryCodeService temporaryCodeService;
     private final TelegramProperties telegramProperties;
-    private static final String DIVIDER = "%s|%s";
+    private static final String DIVIDER = "%sC%s";
     private static final String DEEPLINK = "https://t.me/%s?start=%s";
 
     public Mono<RegistrationResponseDto> register(RegistrationRequestDto request) {
@@ -27,7 +27,7 @@ public class RegistrationService {
                 );
     }
 
-    private RegistrationResponseDto buildResponse(UUID code, String phoneNumber) {
+    private RegistrationResponseDto buildResponse(Integer code, String phoneNumber) {
         return new RegistrationResponseDto(DEEPLINK.formatted(telegramProperties.getTelegramBotUsername(),
                 DIVIDER.formatted(phoneNumber, code)));
     }

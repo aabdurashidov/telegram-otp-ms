@@ -1,5 +1,14 @@
 package uz.anorbank.telegram.otp.client.response;
 
-public class TelegramUpdate {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class TelegramUpdate implements Serializable {
     private TelegramMessage message;
 }
