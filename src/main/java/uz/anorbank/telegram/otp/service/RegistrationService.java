@@ -17,7 +17,7 @@ public class RegistrationService {
     private final TemporaryCodeService temporaryCodeService;
     private final TelegramProperties telegramProperties;
     private static final String DIVIDER = "%s|%s";
-    private static final String DEEPLINK = "t.me/%s?start=%s";
+    private static final String DEEPLINK = "https://t.me/%s?start=%s";
 
     public Mono<RegistrationResponseDto> register(RegistrationRequestDto request) {
         String phoneNumber = request.getPhoneNumber();

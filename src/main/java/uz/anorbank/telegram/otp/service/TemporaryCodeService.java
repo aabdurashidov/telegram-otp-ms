@@ -1,7 +1,7 @@
 package uz.anorbank.telegram.otp.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.redis.core.ReactiveRedisTemplate;
+import org.springframework.data.redis.core.ReactiveStringRedisTemplate;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
@@ -12,12 +12,12 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class TemporaryCodeService {
-    private final ReactiveRedisTemplate<String, UUID> redisTemplate;
+    private final ReactiveStringRedisTemplate redisTemplate;
 
     public Mono<UUID> generate(String phoneNumber) {
         UUID tempCode = UUID.randomUUID();
         return redisTemplate.opsForValue()
-                .set(phoneNumber, tempCode, Duration.of(1, ChronoUnit.MINUTES))
+                .set(phoneNumber, tempCode.toString(), Duration.of(1, ChronoUnit.MINUTES))
                 .map(saved -> tempCode);
     }
 }
